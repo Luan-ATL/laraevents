@@ -10,15 +10,17 @@
 </head>
 <body>
 <h1 class="text-center my-4">Criar conta</h1>
+
     <div class="card shadow my-5 w-75 mx-auto">
         <div class="card-body">
-            <form>
+            <form action="{{ route('auth.register.store') }}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             <input
                                 type="text"
+                                name="name"
                                 class="form-control"
                                 placeholder="Nome"
                             >
@@ -28,6 +30,7 @@
                         <div class="form-group"> 
                             <input
                                 type="email"
+                                name="email"
                                 class="form-control"
                                 placeholder="E-mail"
                             >
@@ -37,6 +40,7 @@
                         <div class="form-group">     
                             <input
                                 type="text"
+                                name="cpf"
                                 class="form-control"
                                 placeholder="CPF"
                             >
@@ -46,12 +50,14 @@
                         <div class="form-group">     
                             <input
                                 type="password"
+                                name="password"
                                 class="form-control"
                                 placeholder="Senha"
                             >
                         </div>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-success btn-block mt-3">CRIAR CONTA</button>
             </form>
         </div>
     </div>
